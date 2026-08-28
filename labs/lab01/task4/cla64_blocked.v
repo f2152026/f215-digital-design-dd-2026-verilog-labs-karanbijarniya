@@ -21,7 +21,7 @@ module cla64_blocked(
   wire [15:1] c;   // carries BETWEEN blocks: c[1]..c[15]
 
   // TODO: your sixteen cla4 instances go here.
-   cla4 block0  (.a(a[3:0]),   .b(b[3:0]),   .cin(cin),  .sum(sum[3:0]),   .cout(c[1]));
+ cla4 block0  (.a(a[3:0]),   .b(b[3:0]),   .cin(cin),  .sum(sum[3:0]),   .cout(c[1]));
   cla4 block1  (.a(a[7:4]),   .b(b[7:4]),   .cin(c[1]), .sum(sum[7:4]),   .cout(c[2]));
   cla4 block2  (.a(a[11:8]),  .b(b[11:8]),  .cin(c[2]), .sum(sum[11:8]),  .cout(c[3]));
   cla4 block3  (.a(a[15:12]), .b(b[15:12]), .cin(c[3]), .sum(sum[15:12]), .cout(c[4]));
@@ -37,6 +37,5 @@ module cla64_blocked(
   cla4 block13 (.a(a[55:52]), .b(b[55:52]), .cin(c[13]),.sum(sum[55:52]), .cout(c[14]));
   cla4 block14 (.a(a[59:56]), .b(b[59:56]), .cin(c[14]),.sum(sum[59:56]), .cout(c[15]));
   cla4 block15 (.a(a[63:60]), .b(b[63:60]), .cin(c[15]),.sum(sum[63:60]), .cout(cout));
-
 
 endmodule
